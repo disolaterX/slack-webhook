@@ -3,7 +3,8 @@ import { logger } from "@tinyhttp/logger";
 import { WebClient } from "@slack/web-api";
 import { config } from "@tinyhttp/dotenv";
 
-const envObject = config()?.["parsed"];
+const envObject = config()["parsed"];
+log(envObject);
 const slackInstance = new WebClient(envObject.SLACK_TOKEN);
 
 new App()
